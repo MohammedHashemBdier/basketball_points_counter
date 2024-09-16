@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
-  runApp(Basketball_Points_Counter());
+  runApp(const BasketballPointsCounter());
 }
 
-class Basketball_Points_Counter extends StatefulWidget {
+class BasketballPointsCounter extends StatefulWidget {
+  const BasketballPointsCounter({super.key});
+
   @override
-  State<Basketball_Points_Counter> createState() =>
-      _Basketball_Points_CounterState();
+  State<BasketballPointsCounter> createState() =>
+      _BasketballPointsCounterState();
 }
 
-class _Basketball_Points_CounterState extends State<Basketball_Points_Counter> {
+class _BasketballPointsCounterState extends State<BasketballPointsCounter> {
   int teamAPoints = 0;
 
   int teamBPoints = 0;
@@ -30,7 +32,7 @@ class _Basketball_Points_CounterState extends State<Basketball_Points_Counter> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Container(
+                SizedBox(
                   height: 500,
                   child: Column(
                     children: [
@@ -50,7 +52,7 @@ class _Basketball_Points_CounterState extends State<Basketball_Points_Counter> {
                       ),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                            primary: Colors.deepOrangeAccent,
+                            backgroundColor: Colors.deepOrangeAccent,
                             minimumSize: const Size(100, 40)),
                         onPressed: () {
                           teamAPoints += 1;
@@ -69,7 +71,7 @@ class _Basketball_Points_CounterState extends State<Basketball_Points_Counter> {
                       ),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                            primary: Colors.deepOrangeAccent,
+                            backgroundColor: Colors.deepOrangeAccent,
                             minimumSize: const Size(100, 40)),
                         onPressed: () {
                           teamAPoints += 2;
@@ -88,7 +90,7 @@ class _Basketball_Points_CounterState extends State<Basketball_Points_Counter> {
                       ),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                            primary: Colors.deepOrangeAccent,
+                            backgroundColor: Colors.deepOrangeAccent,
                             minimumSize: const Size(100, 40)),
                         onPressed: () {
                           teamAPoints += 3;
@@ -108,15 +110,15 @@ class _Basketball_Points_CounterState extends State<Basketball_Points_Counter> {
                     ],
                   ),
                 ),
-                Container(
+                const SizedBox(
                   height: 500,
-                  child: const VerticalDivider(
+                  child: VerticalDivider(
                     endIndent: 60,
                     color: Colors.grey,
                     thickness: 1,
                   ),
                 ),
-                Container(
+                SizedBox(
                   height: 500,
                   child: Column(
                     children: [
@@ -136,7 +138,7 @@ class _Basketball_Points_CounterState extends State<Basketball_Points_Counter> {
                       ),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                            primary: Colors.deepOrangeAccent,
+                            backgroundColor: Colors.deepOrangeAccent,
                             minimumSize: const Size(100, 40)),
                         onPressed: () {
                           setState(() {
@@ -156,7 +158,7 @@ class _Basketball_Points_CounterState extends State<Basketball_Points_Counter> {
                       ),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                            primary: Colors.deepOrangeAccent,
+                            backgroundColor: Colors.deepOrangeAccent,
                             minimumSize: const Size(100, 40)),
                         onPressed: () {
                           setState(() {
@@ -176,7 +178,7 @@ class _Basketball_Points_CounterState extends State<Basketball_Points_Counter> {
                       ),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                            primary: Colors.deepOrangeAccent,
+                            backgroundColor: Colors.deepOrangeAccent,
                             minimumSize: const Size(100, 40)),
                         onPressed: () {
                           setState(() {
@@ -201,7 +203,8 @@ class _Basketball_Points_CounterState extends State<Basketball_Points_Counter> {
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                  primary: Colors.red, minimumSize: const Size(160, 50)),
+                  backgroundColor: Colors.red,
+                  minimumSize: const Size(160, 50)),
               onPressed: () {
                 setState(() {
                   teamAPoints = 0;
